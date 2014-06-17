@@ -1,4 +1,4 @@
-;WinChan = (function() {
+var WinChan = (function() {
   var RELAY_FRAME_NAME = "__winchan_relay_frame";
   var CLOSE_CMD = "die";
 
@@ -292,3 +292,5 @@
     };
   }
 })();
+
+module.exports = WinChan;
