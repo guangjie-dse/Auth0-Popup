@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-const
-express = require('express'),
-path = require('path'),
-postprocess = require('postprocess');
+var express = require('express'),
+    path = require('path'),
+    postprocess = require('postprocess');
 
 const IP_ADDRESS = process.env['IP_ADDRESS'] || '127.0.0.1';
 
