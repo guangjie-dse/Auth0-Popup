@@ -29,7 +29,7 @@ var wc = WinChan.onOpen(function(origin, r, cb) {
   });
   $("button#nav_away").click(function() {
     wc.detach();
-    window.location = "http://127.0.0.1:8200/complex_example/child2.html";
+    window.location = window.location.origin + "/complex_example/child2.html";
   });
 });
 

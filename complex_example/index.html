@@ -28,8 +28,8 @@ $("#open").click(function(e) {
   $("pre").text("");
   e.preventDefault();
   w = WinChan.open({
-    url: "http://127.0.0.1:8200/complex_example/child.html",
-    relay_url: "http://127.0.0.1:8200/relay.html",
+    url: window.location.origin + "/complex_example/child.html",
+    relay_url: window.location.origin + "/relay.html",
     window_features: "menubar=0,location=0,resizable=0,scrollbars=0,status=0,dialog=1,width=700,height=375",
     params: {
       these: "things",
