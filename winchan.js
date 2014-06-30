@@ -143,7 +143,7 @@ var WinChan = (function() {
           if (w && w.closed) {
             cleanup();
             if (cb) {
-              cb('unknown closed window');
+              cb('User closed the popup window');
               cb = null;
             }
           }
