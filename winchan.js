@@ -293,4 +293,6 @@ var WinChan = (function() {
   }
 })();
 
-module.exports = WinChan;
+if (module && module.exports) {
+  module.exports = WinChan;
+}
