@@ -14,6 +14,10 @@
 <script src="../winchan.js"></script>
 <script src="jquery.js"></script>
 <script>
+if (!window.location.origin) {
+  window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port: '');
+}
+
 
 var wc = WinChan.onOpen(function(origin, r, cb) {
   $("#who").text(origin);
