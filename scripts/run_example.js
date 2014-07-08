@@ -6,8 +6,8 @@ var express = require('express'),
 
 const IP_ADDRESS = process.env['IP_ADDRESS'] || '127.0.0.1';
 
-var client = express.createServer(),
-    server = express.createServer();
+var client = express(),
+    server = express();
 
 var subMiddleware = postprocess(function(req, buf) {
   var re = new RegExp('127\\.0\\.0\\.1', 'g');
@@ -25,6 +25,8 @@ server
   .use(subMiddleware)
   .use(express.static(path.join(path.dirname(__dirname))))
   .listen(8200);
+
+module.exports = {client: client, server: server};
 
 console.log("An example: http://" + IP_ADDRESS + ":8100/example");
 console.log("A more complicated example: http://" + IP_ADDRESS + ":8100/complex_example");
