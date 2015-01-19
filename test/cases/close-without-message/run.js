@@ -7,7 +7,7 @@ $(document).ready(function(){
       window_features: "width=700,height=375",
       params: argString
     }, function(err, resp) {
-      equal(err, 'unknown closed window');
+      equal(err, 'User closed the popup window');
       start();
     });
   });
