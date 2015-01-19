@@ -134,7 +134,10 @@ var WinChan = (function() {
           messageTarget = iframe.contentWindow;
         }
 
-        var w = window.open(opts.url, opts.window_name, opts.window_features);
+        var w = opts.popup || window.open(opts.url, opts.window_name, opts.window_features);
+        if (opts.popup) {
+          w.location.href = opts.url;
+        }
 
         if (!messageTarget) messageTarget = w;
 
