@@ -70,7 +70,7 @@ for IE support).
 there's a little tiny webserver in-tree to let you run the examples.  You'll need node.js and
 npm installed.  Once you have these, just:
 
-    $ scripts/setup_dev_deps.sh
+    $ npm i
     $ scripts/run_example.js
 
 Now load `http://127.0.0.1:8100/example` (or the more complicated example which demonstrates
@@ -80,7 +80,7 @@ navigation away and back in window at `http://127.0.0.1:8100/complex_example`
 
 node.js and npm are required to run the unit tests. Once installed
 
-    $ scripts/setup_dev_deps.sh
+    $ npm i
     $ scripts/run_example.js
 
 And open `http://127.0.0.1:8100/test` in your favorite web browser.
@@ -92,29 +92,10 @@ And open `http://127.0.0.1:8100/test` in your favorite web browser.
 the `run_example.js` script will bind whatever IP is in the `IP_ADDRESS` env var.
 So to test over the network:
 
-    $ scripts/setup_dev_deps.sh
+    $ npm i
     $ IP_ADDRESS=<my external IP> scripts/run_example.js
 
 (repace `<my external IP>` with *your* IP address)
 
 then hit `http://<my external IP>:8100/test`
 
-## LICENSE
-
-    Copyright (c) 2012 Lloyd Hilaiel
-    
-    Permission is hereby granted, free of charge, to any person obtaining a copy 
-    of this software and associated documentation files (the "Software"), to deal in 
-    the Software without restriction, including without limitation the rights to use, 
-    copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the 
-    Software, and to permit persons to whom the Software is furnished to do so, 
-    subject to the following conditions:
-    
-    The above copyright notice and this permission notice shall be included in all 
-    copies or substantial portions of the Software.
-    
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
-    INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR 
-    PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
-    FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
-    ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
