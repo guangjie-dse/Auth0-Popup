@@ -8,8 +8,7 @@
     "webdriver-manager": "0.0.6"
   },
   "scripts": {
-    "postinstall": "webdriver-manager update --chrome --standalone",
-    "integration": "mocha scenario"
+    "integration": "/Users/apose/auth0/winchan/node_modules/webdriver-manager/lib/index.js && ./node_modules/.bin/mocha scenario"
   },
   "main": "./winchan.js",
   "dependencies": {
