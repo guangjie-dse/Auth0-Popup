@@ -2,6 +2,7 @@
   "name": "winchan",
   "version": "0.1.1",
   "devDependencies": {
+    "express": "3.21.2",
     "mocha": "^1.20.1",
     "postprocess": "~0.2.4",
     "selenium-webdriver": "^2.42.1",
@@ -11,9 +12,7 @@
     "integration": "/Users/apose/auth0/winchan/node_modules/webdriver-manager/lib/index.js && ./node_modules/.bin/mocha scenario"
   },
   "main": "./winchan.js",
-  "dependencies": {
-    "express": "^3.13.0"
-  },
+  "dependencies": { },
   "license": "MIT",
   "repository": "auth0/winchan"
 }
