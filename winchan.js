@@ -183,22 +183,28 @@ var WinChan = (function() {
           if (e.origin !== origin) { return; }
           try {
             var d = JSON.parse(e.data);
-            if (d.a === 'ready') messageTarget.postMessage(req, origin);
-            else if (d.a === 'error') {
-              cleanup();
-              if (cb) {
-                cb(d.d);
-                cb = null;
-              }
-            } else if (d.a === 'response') {
-              cleanup();
-              if (cb) {
-                cb(null, d.d);
-                cb = null;
-              }
-            }
           } catch(err) {
-            console.err(err);
+            if (cb) {
+              cb(err);
+            } else {
+              throw err;
+            }
+          }
+
+          if (d.a === 'ready') {
+            messageTarget.postMessage(req, origin);
+          } else if (d.a === 'error') {
+            cleanup();
+            if (cb) {
+              cb(d.d);
+              cb = null;
+            }
+          } else if (d.a === 'response') {
+            cleanup();
+            if (cb) {
+              cb(null, d.d);
+              cb = null;
+            }
           }
         }
 
