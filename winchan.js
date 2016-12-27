@@ -117,7 +117,7 @@ var WinChan = (function() {
 
         // sanity check, are url and relay_url the same origin?
         var origin = opts.origin || extractOrigin(opts.url);
-        if (!opts.origin && origin !== extractOrigin(opts.relay_url)) {
+        if (origin !== extractOrigin(opts.relay_url)) {
           return setTimeout(function() {
             cb('invalid arguments: origin of url and relay_url must match');
           }, 0);
