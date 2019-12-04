@@ -1,0 +1,15 @@
+<!-- popup_response_handler.html -->
+<html>
+  <body>
+    <script src="env.js"></script>
+    <script src="auth0.min.js"></script>
+    <!-- <script src="https://cdn.auth0.com/js/auth0/9.10.4/auth0.min.js"></script> -->
+    <script type="text/javascript">
+      var webAuth = new auth0.WebAuth({
+        domain: AUTH0_DOMAIN,
+        clientID: AUTH0_CLIENT_ID
+      });
+      webAuth.popup.callback();
+    </script>
+  </body>
+</html>

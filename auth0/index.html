@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p>
+      Login with popup window with Auth0.js
+      <br />
+      <button id="login">Login with Popup</button>
+      <br />
+      <button id="logout">Logout</button>
+    </p>
+
+    <p>Here&apos;s the response from the window:</p>
+    <pre></pre>
+  </body>
+  <script src="jquery.js"></script>
+  <script src="env.js"></script>
+  <script src="auth0.min.js"></script>
+  <!-- <script src="https://cdn.auth0.com/js/auth0/9.10.4/auth0.min.js"></script> -->
+  <script>
+    var webAuth = new auth0.WebAuth({
+      domain: AUTH0_DOMAIN,
+      clientID: AUTH0_CLIENT_ID,
+      redirectUri: AUTH0_CALLBACK_URL,
+      responseType: "token id_token",
+      scope: "openid profile email",
+      leeway: 60
+    });
+
+    $("#login").click(function(e) {
+      $("pre").text("");
+      e.preventDefault();
+      webAuth.popup.authorize({}, function(err, authResult) {
+        console.log("error:");
+        console.log(err);
+        console.log("auth result:");
+        console.log(authResult);
+        $("pre").text(JSON.stringify(authResult, null, 2));
+      });
+    });
+
+    $("#logout").click(function(e) {
+      webAuth.logout({
+        returnTo: location.href,
+        federated: true,
+        clientID: AUTH0_CLIENT_ID
+      });
+    });
+  </script>
+</html>
