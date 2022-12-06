@@ -2,7 +2,7 @@
   "name": "winchan",
   "version": "0.2.2",
   "devDependencies": {
-    "express": "3.21.2",
+    "express": "4.17.3",
     "mocha": "^1.20.1",
     "postprocess": "~0.2.4",
     "selenium-webdriver": "^2.42.1",
